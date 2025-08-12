@@ -486,10 +486,10 @@ function Lightbox({ photos, startIndex, onClose }) {
 
         <div className="mt-3 flex items-center justify-between px-1 absolute bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-2xl bg-black/50 backdrop-blur-sm rounded-xl py-3 px-4">
           <div className="text-white">
-            <div className="font-semibold text-sm sm:text-base break-words">
+            <div className="font-semibold text-[10px] sm:text-xs break-words">
               {photo.title || photo.caption}
             </div>
-            <div className="text-slate-200 text-[10px] sm:text-xs">
+            <div className="text-slate-200 text-[8px] sm:text-[10px]">
               {photo.year || ""} • {photo.category || ""}
             </div>
           </div>
