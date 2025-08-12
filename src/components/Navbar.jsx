@@ -24,17 +24,6 @@ export default function Navbar() {
   const roleFormatted = role.charAt(0).toUpperCase() + role.slice(1);
 
   const isAdmin = role === "admin";
-  const isMaker = role === "maker" || role === "ketua divisi";
-  const isChecker = role === "checker" || role === "wakil";
-  const isApprover =
-    role === "approver" ||
-    role === "pengurus rt" ||
-    role === "pengurus rw" ||
-    role === "bendahara" ||
-    role === "ketua panitia";
-  const isAcara = role === "acara";
-
-  const showPengajuan = isMaker || isAcara || isChecker || isApprover;
 
   const navItem = (to, label) => (
     <Link
@@ -85,17 +74,6 @@ export default function Navbar() {
           {navItem("/", "Dashboard")}
           {isAdmin && navItem("/pemasukan", "Pemasukan")}
           {isAdmin && navItem("/pengeluaran", "Pengeluaran")}
-          {isAdmin && navItem("/pengajuan/admin", "Pengajuan")}
-          {isAcara && navItem("/pendaftaran", "Pendaftaran")}
-          {showPengajuan &&
-            navItem(
-              isMaker || isAcara
-                ? "/pengajuan/maker"
-                : isChecker
-                ? "/pengajuan/checker"
-                : "/pengajuan/approver",
-              "Pengajuan"
-            )}
           {/* {navItem("/laporan", "Laporan")} */}
 
           {/* Profile Dropdown */}
@@ -136,23 +114,39 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Dropdown */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden flex flex-col mt-4 gap-2 bg-white/10 rounded-xl p-4 text-sm font-semibold">
+        <div className="md:hidden flex flex-col mt-4 gap-4 bg-white/10 rounded-xl p-4 text-sm font-semibold">
+          {/* User Profile Info */}
+          <div className="flex items-center gap-3 bg-white/20 p-3 rounded-lg">
+            <img
+              src={`https://ui-avatars.com/api/?name=${name}&background=ffffff&color=1A3B5D&size=40`}
+              alt="avatar"
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <div className="flex flex-col">
+              <span className="font-bold">{name}</span>
+              <span className="text-xs text-gray-200">{roleFormatted}</span>
+            </div>
+          </div>
+
+          {/* Nav Links */}
           {navItem("/", "Dashboard")}
           {isAdmin && navItem("/pemasukan", "Pemasukan")}
           {isAdmin && navItem("/pengeluaran", "Pengeluaran")}
-          {isAdmin && navItem("/pengajuan/admin", "Pengajuan")}
-          {isAcara && navItem("/pendaftaran", "Pendaftaran")}
-          {showPengajuan &&
-            navItem(
-              isMaker || isAcara
-                ? "/pengajuan/maker"
-                : isChecker
-                ? "/pengajuan/checker"
-                : "/pengajuan/approver",
-              "Pengajuan"
-            )}
-          {/* {navItem("/laporan", "Laporan")} */}
+
+          {/* Ganti Password */}
+          <button
+            onClick={() => {
+              closeMenu();
+              navigate("/ganti-password");
+            }}
+            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-lg transition"
+          >
+            <Key size={16} /> Ganti Password
+          </button>
+
+          {/* Logout */}
           <button
             onClick={handleLogout}
             className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-lg transition"
