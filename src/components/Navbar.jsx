@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, LogOut, ChevronDown } from "lucide-react";
+import { Menu, X, Key, LogOut, ChevronDown } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
@@ -117,6 +117,12 @@ export default function Navbar() {
 
             {showDropdown && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-xl shadow-xl z-50 overflow-hidden">
+                <button
+                  onClick={() => navigate("/ganti-password")}
+                  className="w-full px-5 py-3 text-left hover:bg-gray-100 flex items-center gap-2 text-sm font-medium"
+                >
+                  <Key size={16} /> Ganti Password
+                </button>
                 <button
                   onClick={handleLogout}
                   className="w-full px-5 py-3 text-left hover:bg-gray-100 flex items-center gap-2 text-sm font-medium"

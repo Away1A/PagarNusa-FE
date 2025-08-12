@@ -6,15 +6,11 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Pemasukan from "./pages/Pemasukan";
 import Pengeluaran from "./pages/Pengeluaran";
-// import Laporan from "./pages/Laporan";
 import LaporanGuest from "./pages/LaporanGuest";
 import DokumentasiGuest from "./pages/DokumentasiGuest";
 import Pendaftaran from "./pages/Pendaftaran";
-import PengajuanMaker from "./pages/pengajuan/PengajuanMaker";
-import PengajuanChecker from "./pages/pengajuan/PengajuanChecker";
-import PengajuanApprover from "./pages/pengajuan/PengajuanApprover";
-import PengajuanAdmin from "./pages/pengajuan/pengajuanAdmin";
 import PrivateRoute from "./components/PrivateRoute";
+import GantiPassword from "./pages/GantiPassword";
 
 export default function App() {
   const { auth } = useAuth(); // auth: { token, role, user }
@@ -71,50 +67,18 @@ export default function App() {
               }
             />
             <Route
+              path="/ganti-password"
+              element={
+                <PrivateRoute>
+                  <GantiPassword />
+                </PrivateRoute>
+              }
+            />
+            <Route
               path="/pengeluaran"
               element={
                 <PrivateRoute>
                   <Pengeluaran />
-                </PrivateRoute>
-              }
-              // />
-              // <Route
-              //   path="/laporan"
-              //   element={
-              //     <PrivateRoute>
-              //       <Laporan />
-              //     </PrivateRoute>
-              //   }
-            />
-            <Route
-              path="/pengajuan/admin"
-              element={
-                <PrivateRoute>
-                  <PengajuanAdmin />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/pengajuan/maker"
-              element={
-                <PrivateRoute>
-                  <PengajuanMaker />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/pengajuan/checker"
-              element={
-                <PrivateRoute>
-                  <PengajuanChecker />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/pengajuan/approver"
-              element={
-                <PrivateRoute>
-                  <PengajuanApprover />
                 </PrivateRoute>
               }
             />
