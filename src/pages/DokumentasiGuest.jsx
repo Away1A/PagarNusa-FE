@@ -880,7 +880,7 @@ export default function DokumentasiGuest() {
                       </h3>
                       <p className="text-[#F5F5F5]">
                         Setiap foto adalah saksi bisu perkembangan dan
-                        pertumbuhan RW.09 dari waktu ke waktu.
+                        pertumbuhan Pagar Nusa dari waktu ke waktu.
                       </p>
                     </div>
                   </div>
@@ -909,7 +909,7 @@ export default function DokumentasiGuest() {
                       </h3>
                       <p className="text-[#F5F5F5]">
                         Foto bersama menjadi pengingat akan kebersamaan dan
-                        kehangatan antar warga.
+                        kehangatan keluarga Pagar Nusa.
                       </p>
                     </div>
                   </div>
@@ -938,7 +938,7 @@ export default function DokumentasiGuest() {
                       </h3>
                       <p className="text-[#F5F5F5]">
                         Dokumentasi ini menjadi warisan berharga untuk generasi
-                        mendatang di RW.09.
+                        mendatang di Pagar Nusa.
                       </p>
                     </div>
                   </div>
