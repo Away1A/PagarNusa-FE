@@ -6,9 +6,8 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Pemasukan from "./pages/Pemasukan";
 import Pengeluaran from "./pages/Pengeluaran";
-import Laporan from "./pages/Laporan";
+// import Laporan from "./pages/Laporan";
 import LaporanGuest from "./pages/LaporanGuest";
-import AcaraGuest from "./pages/AcaraGuest";
 import DokumentasiGuest from "./pages/DokumentasiGuest";
 import Pendaftaran from "./pages/Pendaftaran";
 import PengajuanMaker from "./pages/pengajuan/PengajuanMaker";
@@ -31,7 +30,7 @@ export default function App() {
             {/* Public Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/laporan/guest" element={<LaporanGuest />} />
-            <Route path="/acara/guest" element={<AcaraGuest />} />
+            {/* <Route path="/acara/guest" element={<AcaraGuest />} /> */}
             <Route path="/dokumentasi/guest" element={<DokumentasiGuest />} />
 
             {/* Route utama diarahkan berdasarkan login */}
@@ -78,14 +77,14 @@ export default function App() {
                   <Pengeluaran />
                 </PrivateRoute>
               }
-            />
-            <Route
-              path="/laporan"
-              element={
-                <PrivateRoute>
-                  <Laporan />
-                </PrivateRoute>
-              }
+              // />
+              // <Route
+              //   path="/laporan"
+              //   element={
+              //     <PrivateRoute>
+              //       <Laporan />
+              //     </PrivateRoute>
+              //   }
             />
             <Route
               path="/pengajuan/admin"
