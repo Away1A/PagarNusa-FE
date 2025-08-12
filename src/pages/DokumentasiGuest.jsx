@@ -969,7 +969,7 @@ export default function DokumentasiGuest() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Ikuti Dokumentasi Kami</h3>
           <p className="text-white/80 mb-6">
-            Lihat momen-momen kegiatan warga RW.09 secara langsung melalui
+            Lihat momen-momen kegiatan Pagar Nusa secara langsung melalui
             Instagram.
           </p>
 
