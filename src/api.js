@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3003/api",
+  baseURL: "https://tarka.ngrok.app/pagar-nusa/api",
   headers: {
     "ngrok-skip-browser-warning": "true",
   }, // Ganti jika backend kamu berbeda
